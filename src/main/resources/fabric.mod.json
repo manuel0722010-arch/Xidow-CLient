@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "xidowclient",
+  "version": "${version}",
+  "name": "Xidow Client",
+  "description": "Custom Fabric Client for Minecraft 1.21.1",
+  "authors": [
+    "AmyTeAmo"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/xidowclient/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.xidow.client.XidowClientMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
