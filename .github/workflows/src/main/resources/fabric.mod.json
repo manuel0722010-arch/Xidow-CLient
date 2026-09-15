@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "xidowclient",
+  "version": "1.0.0",
+  "name": "Xidow Client",
+  "description": "Mod de utilidades PotPvP, interfaz personalizada y optimizacion de FPS. By AmyTeAmo",
+  "authors": [
+    "AmyTeAmo"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.xidow.client.XidowClientMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "~1.21.10",
+    "java": ">=21"
+  }
+}
