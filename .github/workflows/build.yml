@@ -18,16 +18,11 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Permisos de ejecucion para Gradle
-        run: chmod +x gradlew || true
+      - name: Instalar Gradle
+        uses: gradle/actions/setup-gradle@v3
 
-      - name: Compilar mod con Gradle
-        run: |
-          if [ -f "./gradlew" ]; then
-            ./gradlew build
-          else
-            gradle build
-          fi
+      - name: Compilar mod
+        run: gradle build
 
       - name: Guardar archivo .jar
         uses: actions/upload-artifact@v4
