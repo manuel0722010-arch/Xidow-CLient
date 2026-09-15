@@ -1,0 +1,31 @@
+name: Compilar Xidow Client
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Otorgar permisos a Gradle
+        run: chmod +x gradlew || true
+
+      - name: Compilar ejecutable JAR
+        run: ./gradlew build
+
+      - name: Subir artifact JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: XidowClient-1.21.10-JAR
+          path: build/libs/*.jar
